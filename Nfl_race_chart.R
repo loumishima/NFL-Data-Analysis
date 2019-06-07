@@ -36,8 +36,8 @@ data <- players_cumulative %>%
 
 p <- data %>%
   ggplot(aes(x = -rank,y = Yds, group = Player)) +
-  geom_tile(aes(y = Yds / 2, height = Yds, fill = Team), width = 0.9) +
-  geom_text(aes(label = Player), hjust = "right", colour = "black", fontface = "bold", nudge_y = -1000) +
+  geom_tile(aes(y = Yds / 2, height = Yds, fill = Team, color = Team), size = 1, width = 0.9) +
+  geom_text(aes(label = Player), hjust = "right", colour = "white", fontface = "bold", nudge_y = -1000) +
   geom_text(aes(label = scales::comma(Yds)), hjust = "left", nudge_y = 1000, colour = "grey30") +
   coord_flip(clip="off") +
   scale_x_discrete("") +
@@ -56,9 +56,84 @@ p <- data %>%
        caption='Source: NFL
        Luiz Henrique Rodrigues / twitter: @LHRO_')
 
+# NFL Colors ----
+p <- p + scale_fill_manual(values=c("#c2c3c4", # Retired
+                                    "#97233F", # Arizona
+                                    "#A71930", # Atlanta
+                                    "#241773", # Baltimore
+                                    "#002244", # New England
+                                    "#00338D", # Buffalo
+                                    "#0085CA", # Carolina
+                                    "#0B162A", # Chicago
+                                    "#FB4F14", # Cincinnati
+                                    "#311D00", # Cleveland
+                                    "#003594", # Dallas
+                                    "#FB4F14", # Denver
+                                    "#0076B6", # Detroit
+                                    "#203731", # Green Bay
+                                    "#03202F", # Houston
+                                    "#003087", # Indianapolis
+                                    "#E31837", # Kansas City
+                                    "#002244", # LAR
+                                    "#0080C6", # LAC
+                                    "#008E97", # Miami
+                                    "#4F2683", # Minnesota
+                                    "#002244", # New England
+                                    "#D3BC8D", # New Orleans
+                                    "#0B2265", # NYG
+                                    "#125740", # NYJ
+                                    "#000000", # Oakland
+                                    "#004C54", # Philadelphia
+                                    "#FFB612", # Pittsburgh
+                                    "#0080C6", # San Diego
+                                    "#002244", # Seattle
+                                    "#AA0000", # San Francisco
+                                    "#002244", # LAR
+                                    "#D50A0A", # Tampa
+                                    "#773141" # Washington
+))
+# Scatter plot
+
+p <- p + scale_color_manual(values=c("#c2c3c4", # RETIRED
+                                     "#FFB612", # Arizona
+                                     "#000000", # Atlanta
+                                     "#000000", # Baltimore
+                                     "#C60C30", # New England
+                                     "#C60C30", # Buffalo
+                                     "#101820", # Carolina
+                                     "#C83803", # Chicago
+                                     "#000000", # Cincinnati
+                                     "#FF3C00", # Cleveland
+                                     "#869397", # Dallas
+                                     "#002244", # Denver
+                                     "#B0B7BC", # Detroit
+                                     "#FFB612", # Green Bay
+                                     "#A71930", # Houston
+                                     "#003087", # Indianapolis
+                                     "#FFB81C", # Kansas City
+                                     "#866D4B", # LAR
+                                     "#FFC20E", # LAC
+                                     "#FC4C02", # Miami
+                                     "#FFC62F", # Minnesota
+                                     "#C60C30", # New England
+                                     "#101820", # New Orleans
+                                     "#A71930", # NYG
+                                     "#125740", # NYJ
+                                     "#A5ACAF", # Oakland
+                                     "#A5ACAF", # Philadelphia
+                                     "#101820", # Pittsburgh
+                                     "#FFC20E", # LAC
+                                     "#69BE28", # Seattle
+                                     "#B3995D", # San Francisco
+                                     "#866D4B", # LAR
+                                     "#0A0A08", # Tampa
+                                     "#FFB612" # Washington
+))
+
+# Animation ----
 animate(p, nframes = 1000, fps = 25, end_pause = 50, width = 1200, height = 900)
 
-anim_save('race2.gif', animation = last_animation())
+anim_save('race.gif', animation = last_animation())
 
 #Change the colors to the teams - Fill = Main Colour / Colour = Secondary Colour
 #Color reference: https://teamcolorcodes.com/nfl-team-color-codes/
