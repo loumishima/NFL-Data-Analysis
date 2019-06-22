@@ -36,3 +36,11 @@ For now the Bar chart race is not very user friendly, but to change the attribut
 2. Integrating the two codes into one (Still too emotionally connected to R language haha)
   1. Or maybe two versions (with some language usage analysis)
 3. Create an web page for the data gathering
+
+## References
+
+[National Football League - NFL.com](http://www.nfl.com/stats/categorystats?tabSeq=0&statisticCategory=PASSING&conference=null&season=2018&seasonType=POST&d-447263-s=PASSING_YARDS&d-447263-o=2&d-447263-n=1)
+
+[Michael Toth - Creating a bar chart race in r](https://michaeltoth.me/how-to-create-a-bar-chart-race-in-r-mapping-united-states-city-population-1790-2010.html)
+
+[O'reilly - Web Scraping with Python](http://shop.oreilly.com/product/0636920078067.do)
