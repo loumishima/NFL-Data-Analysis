@@ -6,7 +6,7 @@ It mixes Python and R coding, being used mostly the BeautifulSoup library for th
 
 The video below shows the cumulative yards race among active and retired players over the years
 
-![alt text](https://github.com/loumishima/NFL-Data-Analysis/blob/master/race.gif "Yards leaders")
+![alt text](https://github.com/loumishima/NFL-Data-Analysis/blob/master/images/race.gif "Yards leaders")
 
 ## Web Crawler Usage
 
